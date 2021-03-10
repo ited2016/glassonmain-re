@@ -1,0 +1,376 @@
+@import url("https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding");
+:root {
+  --color-text: #fff;
+  --color-bg: #ddd;
+  --font-text: "Nanum Gothic Coding";
+  --fontsize-text: 4vw;
+}
+
+body {
+  min-height: 100vh;
+  color: #000;
+  color: var(--color-text);
+  background-color: #fff;
+  background: var(--color-bg);
+  /*-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;*/
+  transition: background 1s;
+}
+header{
+  position: fixed;
+  top:0;
+  left: 0;
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition:0.6s;
+  padding:40px 100px;
+  z-index: 100000;
+}
+header.sticky{
+  padding:5px 100px;
+  background-color: rgb(31, 31, 31, 0.2);
+  
+ /* padding:5px 100px;
+  background-color: #fff; */
+}
+header .logo{
+  position: relative;
+  font-weight:700;
+  color:#fff;
+  text-decoration: none;
+  font-size: 2em;
+  letter-spacing: 2px;
+  transition: 0.6s;
+
+}
+header ul{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: 60%;
+}
+header ul li{
+  
+  list-style: none;
+}
+
+header ul li a{
+  position: relative;
+  margin:0 15px;
+  text-decoration: none;
+  color:#fff;
+  letter-spacing: 2px;
+  font-weight: 500;
+  transition: 0.6s;
+}
+header ul li a:hover{
+  color:#feba7a;
+}
+
+header.sticky .logo,
+header.sticky ul li a{
+  color:#fff;
+}
+header.sticky ul li a:hover{
+  color:#feba7a;
+}
+.sections {
+  position: relative;
+  display: block;
+ 
+}
+
+.section {
+  position: relative;
+  min-height: 100vh;
+}
+.section--image img.main1 {
+  display: block;
+  position: relative;
+  max-width: 90%;
+  max-height: 100vh;
+  margin: 10% auto;
+  opacity:0.5;
+}
+.section--image {
+  display: block;
+  position: relative;
+  max-width: 100%;
+  margin: 10vh 0 30vh auto;
+  opacity: 0;
+  transition: opacity 1s;
+}
+.active .section--image {
+  opacity: 1;
+}
+.section--image img {
+  display: block;
+  position: relative;
+  max-width: 90%;
+  max-height: 100vh;
+  margin: 0 0 0 auto;
+  
+}
+.icon-scroll,
+.icon-scroll::before {
+    position: absolute;
+    top:65%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.icon-scroll.scroll3{
+  top:80%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+.icon-scroll {
+    width: 40px;
+    height: 70px;
+    border: 2px solid #fff;
+    border-radius: 25px;
+    /* cursor: pointer; */
+    bottom: 2rem;
+}
+
+.icon-scroll::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    margin-left: -4px;
+    top: 15px;
+    border-radius: 50%;
+    animation: 1.5s scroll cubic-bezier(0.65, -0.55, 0.25, 1.5) infinite;
+}
+
+@keyframes scroll {
+    0% {
+        opacity: 0;
+        transform: translateY(0) scale(0.5);
+    }
+    10% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.5);
+    }
+}
+.section--image img.main5 {
+  display: block;
+  position: relative;
+  max-width:100%;
+  max-height: 100vh;
+  margin: 0 auto;
+  
+}
+
+.section--header {
+  font-size: calc(var(--fontsize-text)*1.2);
+  font-family: 'Nanum Gothic';
+  position: absolute;
+  top:30vh;
+  left: 9vmax;
+ /* padding-left: 5vmax;*/
+  z-index: 1000;
+  line-height: 1;
+  font-weight: 700;
+  
+  opacity: 0;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+.active .section--header {
+  -webkit-animation-name: fadeInUp;
+          animation-name: fadeInUp;
+}
+
+.section--header.headerlast{
+  left: 19vmax;
+  
+  text-shadow: rgb(56, 56, 56) 1px 0 5px;
+}
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    transform: translate3d(0, 55%, 0);
+    opacity: 0;
+    
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translate3d(0, 55%, 0);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+footer{
+  /* position:fixed; */
+  bottom:0px;
+  width:100%;
+  background: #c3a893;
+  /*color:#d9d9d9
+  font-family:'Nanum Gothic', sans-serif; */
+}
+.main-content{
+  display: flex;
+}
+.main-content .box{
+  flex-basis: 50%;
+  padding: 10px 20px;
+
+}
+.box h2{
+  font-size:1.125rem;
+  font-weight: 600;
+  
+}
+.box .content{
+  margin: 20px 0 0 0;
+  position: relative;
+} 
+/* .box .content:before{
+  position: absolute;
+  content: '';
+  top: -10px;
+  height: 2px;
+  width: 100%;
+  background: #1a1a1a;
+} */
+.box .content:after{
+  position: absolute;
+  content: '';
+  height: 2px;
+  width: 15%;
+  background: #f12020;
+  top: -10px;
+}   
+.left .content p{
+  text-align: justify;
+}
+.left .content .social{
+  margin: 20px 0 0 0;
+}
+.left .content .social a{
+  padding: 0 2px;
+}
+.left .content .social a span{
+  height: 40px;
+  width: 40px;
+  background: #1a1a1a;
+  line-height: 40px;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+.left .content .social a span:hover{
+  background: #f12020;
+}
+.center .content .fas{
+  font-size: 1.4375rem;
+  background: #1a1a1a;
+  height: 45px;
+  width: 45px;
+  line-height: 45px;
+  text-align: center;
+  border-radius: 50%;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.center .content .fas:hover{
+  background: #f12020;
+}
+.center .content .text{
+  font-size: 1.0625rem;
+  font-weight: 500;
+  padding-left: 10px;
+}
+.center .content .phone{
+  margin: 15px 0;
+}
+.right form .text{
+  font-size: 1.0625rem;
+  margin-bottom: 2px;
+  color: #656565;
+}
+.right form .msg{
+  margin-top: 10px;
+}
+.right form input, .right form textarea{
+  width: 95%;
+  font-size: 1.0625rem;
+  background: #fdfdfd;
+  padding-left: 10px;
+  border: 1px solid #222222;
+}
+.right form input:focus,
+.right form textarea:focus{
+  outline-color: #3498db;
+}
+.right form input{
+  height: 35px;
+}
+.right form .btn{
+  margin-top: 10px;
+}
+.right form .btn button{
+  height: 40px;
+  width: 95%;
+  border: none;
+  outline: none;
+  background: #cebcc0;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: .3s;
+}
+.right form .btn button:hover{
+  background: #f12020;
+}
+.bottom center{
+  padding: 5px;
+  font-size: 0.9375rem;
+  background: #151515;
+}
+.bottom center span{
+  color: #656565;
+}
+.bottom center a{
+  color: #f12020;
+  text-decoration: none;
+}
+.bottom center a:hover{
+  text-decoration: underline;
+}
+@media screen and (max-width: 900px) {
+  footer{
+    position: relative;
+    bottom: 0px;
+  }
+  .main-content{
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .main-content .box{
+    margin: 5px 0;
+  }
+}
